@@ -5,20 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>South park Data App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
       <h1>South Park Characters</h1>
     </header>
-    <main>
-      <section id="characters" class="grid_container">
 
-      </section>
+    <main>
+      <section id="characters" class="grid_container"></section>
     </main>
 
+    <dialog id="dialog_character">
+      <section class="dialog-grid">
+        <figure><img id="dialog_image" src="http://southparkstudios.mtvnimages.com/shared/characters/celebrities/celebrities-caitlyn-jenner.png" alt="" /></figure>
+        <article>
+          <h2 id="dialog_title"></h2>
+          <h3 id="dialog_religion"></h3>
+          <p id="dialog_character_description"></p>
+          <section>
+            <h4>Personal Info</h4>
+            <ul>
+              <li>Gender: <span id="dialog_gender"></span></li>
+              <li>Hair Color: <span id="dialog_hair_color"></span></li>
+              <li>Occupation: <span id="dialog_occupation"></span></li>
+              <li>Catchphrase: <span id="dialog_catchphrase"></span></li>
+              <li>Appearances: <span id="dialog_appearances"></span></li>
+              <li>First Appearance: <span id="dialog_first_appearance"></span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Voiced by</h4>
+            <p><span id="dialog_name">Character</span> is voiced by <span id="dialog_voiced_by_name">actor name</span>.</p>
+          </section>
+        </article>
+      </section>
+      <form method="dialog">
+        <button id="btn_cancel">Close</button>
+      </form>
+    </dialog>
+
     <footer>
-        <p>South Park Data App af Gustav Wiese</p>
+      <p>South Park Data App by Gustav Wiese</p>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
