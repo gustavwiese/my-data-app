@@ -1,5 +1,31 @@
 "use strict";
 
+window.addEventListener("load", start);
+
+function start() {
+  const data = getData();
+  showAllCharacters(data);
+}
+
+function getData() {
+  const data = [];
+  return data;
+}
+
+function showAllCharacters(list) {
+  showCharacter(character);
+}
+
+function showCharacter(character) {
+  const html = ``;
+}
+
+function showDialog(character) {}
+
+function closeDialog() {}
+
+function getDescription() {}
+
 const caitlynJenner = {
   name: "Caitlyn Jenner",
   nickname: undefined,
@@ -16,7 +42,3 @@ const caitlynJenner = {
   appearances: 11,
   firstAppearance: "S14E02",
 };
-
-function showCharacter(character){
-    
-}
