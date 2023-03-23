@@ -2,26 +2,10 @@
 
 window.addEventListener("load", start);
 
-function start() {
-  // const data = getData();
-  // showAllCharacters(data);
-
-  const caitlynJenner = {
-    name: "Caitlyn Jenner",
-    nickname: undefined,
-    image: "http://southparkstudios.mtvnimages.com/shared/characters/celebrities/celebrities-caitlyn-jenner.png",
-    occupation: "Former olympic athlete, television personality, vice president of the United States",
-    age: 73,
-    voicedBy: "Trey Parker",
-    gender: "Female (former male)",
-    religion: "Christian",
-    catchPhrase: "Buckle up, buckaroos",
-    hairColor: "Brown",
-    schoolGrade: undefined,
-    episodes: "S14E02, S19E01, S19E02, S19E08, S19E09, S19E10, S20E01, S20E05, S20E06, S20E07, S20E08",
-    appearances: 11,
-    firstAppearance: "S14E02",
-  };
+async function start() {
+  const caitlynJenner = await getCharacter(
+    "https://raw.githubusercontent.com/gustavwiese/my-data-app/main/caitlynJenner.json"
+  );
   showCharacter(caitlynJenner);
   showCharacter(caitlynJenner);
   showCharacter(caitlynJenner);
@@ -31,15 +15,21 @@ function start() {
   showCharacter(caitlynJenner);
 }
 
+async function getCharacter(url) {
+  const response = await fetch(url);
+  const data = response.json();
+  return data;
+}
+
 function showCharacter(character) {
   document.querySelector("#characters").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
-            <article class="grid-item">
-                <img src="${character.image}">
-                <h2>${character.name}</h2>
-                <p>${character.age + " " + "years old"}</p>
-            </article>
+      <article class="grid_item">
+          <img src="${character.image}">
+          <h2>${character.name}</h2>
+          <p>${character.age + " " + "years old"}</p>
+      </article>
         `
   );
   document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
@@ -86,16 +76,3 @@ function generateDescription(character) {
   }
   return description;
 }
-
-// function getData() {
-//   const data = [];
-//   return data;
-// }
-
-// function showAllCharacters(list) {}
-
-// function showDialog(character) {}
-
-// function closeDialog() {}
-
-// function getDescription() {}
