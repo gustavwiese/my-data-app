@@ -23,6 +23,12 @@ function start() {
     firstAppearance: "S14E02",
   };
   showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
+  showCharacter(caitlynJenner);
 }
 
 function showCharacter(character) {
