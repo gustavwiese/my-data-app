@@ -3,17 +3,8 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const caitlynJenner = await getCharacter(
-    "https://raw.githubusercontent.com/gustavwiese/my-data-app/main/data/caitlynJenner.json"
-  );
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
-  showCharacter(caitlynJenner);
+  const characters = await getCharacter("data/characters.json");
+  characters.forEach(showCharacter);
 }
 
 async function getCharacter(url) {
@@ -29,7 +20,7 @@ function showCharacter(character) {
       <article class="grid_item">
           <img src="${character.image}">
           <h2>${character.name}</h2>
-          <p>${character.age + " " + "years old"}</p>
+          <p>Age: ${character.age}</p>
       </article>
         `
   );
@@ -44,10 +35,10 @@ function showCharacterModal(character) {
   console.log(character);
   document.querySelector("#dialog_image").src = character.image;
   document.querySelector("#dialog_title").textContent = character.name;
-  document.querySelector("#dialog_religion").textContent ="Religion: " + character.religion;
+  document.querySelector("#dialog_religion").textContent = "Religion: " + character.religion;
 
   // description
-  let description = character.name + " is a character in South Park"
+  let description = character.name + " is a character in South Park";
   document.querySelector("#dialog_character_description").textContent = description;
 
   document.querySelector("#dialog_gender").textContent = character.gender;
