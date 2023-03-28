@@ -3,8 +3,10 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const characters = await getCharacter("data/characters.json");
-  characters.forEach(showCharacter);
+  const characterList = await getCharacter("data/characters.json");
+  for (const character of characterList) {
+    showCharacter(character);
+  }
 }
 
 async function getCharacter(url) {
