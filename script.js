@@ -45,6 +45,7 @@ function showCharacterModal(character) {
   document.querySelector("#dialog_hair_color").textContent = character.hairColor;
   document.querySelector("#dialog_occupation").textContent = character.occupation;
   document.querySelector("#dialog_catchphrase").textContent = character.catchPhrase;
+  document.querySelector("#dialog_episodes").textContent = character.episodes;
   document.querySelector("#dialog_appearances").textContent = character.appearances;
   document.querySelector("#dialog_first_appearance").textContent = character.firstAppearance;
 
